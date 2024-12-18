@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Matemasie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Qwitcher+Grypen:wght@400;700&display=swap');
+
+:root{
+
+  --primaryColor: #921A40;
+  --secondaryColor: #C75B7A;
+  --tertiaryColor: #D9ABAB;
+  --quaternaryColor:#F4D9D0;
+  --primaryFont: "Matemasie", sans-serif;
+  --secondaryFont: "Qwitcher Grypen", cursive;
+}
+
+
+.logo {
+  font-family: var(--primaryFont);
+  font-weight: 400;
+  font-style: normal;
+  color: var(--primaryColor);
+
+}
+
+@media (max-width: 600px){
+  .logo{
+    font-size: 1.2rem
+  };
+}
+.link{
+  color: var(--primaryColor);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-family: var(--secondaryFont);
+  font-weight: bold;
+  font-style: normal;
+}
+
+.primary-btn{
+  background-color: var(--primaryColor);
+  border: none;
+
+}
+header{
+  background-color: whitesmoke
+}
+.tagline{
+  color: var(--primaryColor);
+  font-family: var(--secondaryFont);
+  font-weight: bolder;
+  font-size: 3.5rem;
+
+}
+.tag-bg{
+  background-color: var(--tertiaryColor)
+}
+.margin{
+
+margin-top: 7%;
+}
+
+@media (max-width: 700px){
+  .margin{
+    padding-top: 10px;
+  }
+  .tagline{
+    font-size: 2rem;
+  }
+}
+.filter-sec{
+  background-color: var(--quaternaryColor);
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.accordion{
+  color: var(--primaryColor);
+}
+.main-text{
+  color: var(--secondaryColor)
+}
+
+.bg-breadcrumb{
+  background-color: var(--tertiaryColor);
+
+}
+.breadcrumb-link{
+  color: var(--primaryColor)
+}
+.text-prim{
+  color: var(--primaryColor)
+}
+.filter-btn{
+  border: none;
+  background-color: var(--quaternaryColor);
+width: 100vw;
+text-decoration: underline;
+}
+
+.secondary-btn{
+  background-color: whitesmoke;
+  color: var(--primaryColor)
+}
+
+.square-wrapper {
+  width: 100px; /* Set the desired square size */
+  height: 100px;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.square-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.address-btn{
+background-color: var(--quaternaryColor);
+ border: solid var(--primaryColor);
+ color: var(--primaryColor);
+}
+.address-sec{
+  border: 1px solid lightgray;
+  background-color: var(--quaternaryColor);
+}
+.add-address-btn{
+  color: var(--primaryColor);
+  border: none;
+
+}
+.submit-address-btn{
+  border: none;
+  background-color: var(--primaryColor);
+  width: 100%;
+  border-radius: 0.25rem
+}
+.select-address{
+  background-color: var(--primaryColor);
+}
+
+.view-recipe{
+  opacity: 1;
+  display: block;
+
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+
+}
+.card-img-top{
+  width: 100%;
+height: 350px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+@media (max-width: 768px) {
+  .card-img-top {
+    height: 200px;
+  }
+}
+
+.view-details:hover .card-img-top{
+  opacity: 0.8;
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+
+}
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+.view-details:hover .middle {
+  opacity: 1;
+}
+.text {
+  background-color: var(--primaryColor);
+  color: white;
+  font-size: 15px;
+  padding: 14px 20px;
+}
+
+.heart{
+  font-size: 24px;
+  color: grey;
+
+
+}
+.heart:hover{
+  color: var(--primaryColor);
+}
+
+.cart-icon {
+position: relative;
+display: inline-block
+}
+
+.cart-badge{
+position: absolute;
+top: 3px;
+right: -10px;
+background-color: var(--secondaryColor);
+color: white;
+font-size: 12px;
+font-style: var(--primaryFont);
+padding: 2px 6px;
+border-radius: 50%;
+
+}
