@@ -74,9 +74,9 @@ export default function App() {
 
             <div className=" d-flex justify-content-center py-2 pb-4 ">
               <button className="border-0 primary-btn">
-                <a href="/jewellery" className="  btn text-light">
+                <Link to="/jewellery" className="  btn text-light">
                   Shop Now
-                </a>
+                </Link>
               </button>
             </div>
           </div>
