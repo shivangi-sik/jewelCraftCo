@@ -1,11 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import Header from "../../components/Header";
 import { useEffect, useState } from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 import {
   addAddress,
-  addAddressAsync,
   deleteAddressAsync,
   editAddress,
   fetchAdresses,
@@ -23,12 +21,12 @@ const Addresses = () => {
     dispatch(fetchAdresses());
   }, [dispatch]);
 
-  const { addresses, selectedAddress, formType, status, error } = useSelector(
+  const { addresses, selectedAddress, formType } = useSelector(
     (state) => state.addresses
   );
 
   const selectAddressHanlder = (e) => {
-    const { checked, value } = e.target;
+    const { value } = e.target;
     dispatch(selectedAddressAsync(value));
   };
 
@@ -43,7 +41,6 @@ const Addresses = () => {
   };
 
   const deleteAddressHandler = (addressId) => {
-    console.log(addressId);
     dispatch(deleteAddressAsync(addressId));
   };
 
