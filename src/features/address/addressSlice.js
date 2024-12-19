@@ -16,7 +16,7 @@ export const selectedAddressAsync = createAsyncThunk(
   "addresses/selectedAddressAsync",
   async (addressId) => {
     const response = await axios.get(
-      `http://localhost:4000/address/${addressId}`
+      `https://ecommere-backend-git-main-shivangi-siks-projects.vercel.app/address/${addressId}`
     );
     return response.data;
   }
@@ -46,7 +46,6 @@ export const deleteAddressAsync = createAsyncThunk(
 export const updateAddressAsync = createAsyncThunk(
   "addresses/updateAddressAsync",
   async (updatedData) => {
-    console.log(updatedData);
     const response = await axios.put(
       `https://ecommere-backend-git-main-shivangi-siks-projects.vercel.app/address/${updatedData._id}`,
       updatedData
