@@ -32,6 +32,19 @@ export const removeCartItemAsync = createAsyncThunk(
   }
 );
 
+export const clearCartAsync = createAsyncThunk(
+  "cart/clearCartAsync",
+  async (itemsId) => {
+    const response = await axios.delete(
+      "https://ecommere-backend-git-main-shivangi-siks-projects.vercel.app/cart",
+      {
+        data: { itemIds: itemsId },
+      }
+    );
+    return response.data.message;
+  }
+);
+
 export const updateCartItemAsync = createAsyncThunk(
   "cart/updateCartItemAsync",
   async (updatedData) => {
@@ -106,6 +119,11 @@ export const cartSlice = createSlice({
       state.status = "rejected";
       state.error = action.error.message;
       toast.error(state.error);
+    });
+
+    builder.addCase(clearCartAsync.fulfilled, (state, action) => {
+      state.status = "succeeded";
+      state.cartItems = [];
     });
 
     //updateItem

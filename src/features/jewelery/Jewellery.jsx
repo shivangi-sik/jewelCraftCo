@@ -1,6 +1,6 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -52,11 +52,15 @@ const Jewellery = () => {
   }, [dispatch]);
 
   useEffect(() => {
+    const categoryFilter = searchParams.get("filter");
+    console.log(categoryFilter);
     if (categoryFilter) {
       const categoryFromURL = [categoryFilter]; // Convert single category to an array
       if (!selectedCategories.includes(categoryFilter)) {
         dispatch(setSelectedCategories(categoryFromURL));
       }
+    } else {
+      dispatch(setSelectedCategories([]));
     }
   }, [categoryFilter, dispatch]);
 
@@ -70,7 +74,6 @@ const Jewellery = () => {
       );
       dispatch(setPriceRange(maxPrice));
       setIsInitialized(true);
-      console.log(priceRange);
     }
 
     // Set the filtered data based on available filters
@@ -145,12 +148,10 @@ const Jewellery = () => {
   };
 
   const ratingsHandler = (event) => {
-    console.log(event.target.value);
     dispatch(setSelectedRating(event.target.value));
   };
 
   const clearFilterHandler = () => {
-    console.log("clear");
     dispatch(
       setPriceRange(
         Math.max(
