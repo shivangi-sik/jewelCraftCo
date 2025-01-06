@@ -1,6 +1,6 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -52,8 +52,6 @@ const Jewellery = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    const categoryFilter = searchParams.get("filter");
-    console.log(categoryFilter);
     if (categoryFilter) {
       const categoryFromURL = [categoryFilter]; // Convert single category to an array
       if (!selectedCategories.includes(categoryFilter)) {
