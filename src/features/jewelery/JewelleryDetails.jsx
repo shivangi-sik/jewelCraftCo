@@ -1,8 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { IoMdHeart } from "react-icons/io";
 
 import { useEffect, useState } from "react";
@@ -20,7 +18,6 @@ import {
 } from "../cart/cartSlice";
 import SizeChart from "./SizeChart";
 import DeliveryAndReturn from "./DeliveryAndReturn";
-import { toast } from "react-toastify";
 
 const JewelleryDetails = () => {
   const [quantity, setQuantity] = useState(1);

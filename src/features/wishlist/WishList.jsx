@@ -55,7 +55,7 @@ const Wishlist = () => {
   return (
     <div>
       <Header />
-      <main className="mt-5 py-5 container">
+      <main className="mt-5 py-5">
         <h1 className="text-center main-text py-3">Wishlist</h1>
         {status === "Loading" && <p>Loading...</p>}
         {error && <p>{error}</p>}

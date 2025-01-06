@@ -96,7 +96,6 @@ export const addressSlice = createSlice({
     //fetch Selected Address
     builder.addCase(selectedAddressAsync.fulfilled, (state, action) => {
       state.selectedAddress = action.payload;
-      console.log(state.selectedAddress);
     });
 
     //update Address

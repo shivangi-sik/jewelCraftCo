@@ -4,10 +4,23 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-
-import useFetch from "./useFetch";
+import { useDispatch } from "react-redux";
+import {
+  setSelectedCategories,
+  setSelectedRating,
+  setSortBy,
+  setSortedData,
+} from "./features/jewelery/jewelerySlice";
 
 export default function App() {
+  const dispatch = useDispatch();
+  const shopNowHandler = () => {
+    dispatch(setSelectedCategories([]));
+    dispatch(setSelectedRating(null));
+    dispatch(setSortBy(null));
+    dispatch(setSortedData(jewelery));
+  };
+
   return (
     <>
       <Header />
@@ -73,7 +86,7 @@ export default function App() {
             </div>
 
             <div className=" d-flex justify-content-center py-2 pb-4 ">
-              <button className="border-0 primary-btn">
+              <button className="border-0 primary-btn" onClick={shopNowHandler}>
                 <Link to="/jewellery" className="  btn text-light">
                   Shop Now
                 </Link>
