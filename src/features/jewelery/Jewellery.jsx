@@ -53,7 +53,8 @@ const Jewellery = () => {
 
   useEffect(() => {
     if (categoryFilter) {
-      const categoryFromURL = [categoryFilter]; // Convert single category to an array
+      const categoryFromURL = categoryFilter.split(","); // Convert single category to an array
+
       if (!selectedCategories.includes(categoryFilter)) {
         dispatch(setSelectedCategories(categoryFromURL));
       }
